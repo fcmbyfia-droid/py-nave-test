@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0089)file:///C:/Users/user/Downloads/FCM_Web%E5%AD%A6%E7%BF%92%E3%83%8A%E3%83%93_py_v2_13.html -->
+<!-- saved from url=(0089)file:///C:/Users/user/Downloads/FCM_Web%E5%AD%A6%E7%BF%92%E3%83%8A%E3%83%93_py_v2_25.html -->
 <html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -39,8 +39,8 @@ body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text
 .vbtn.active{background:var(--accent);color:#fff;border-color:var(--accent);}
 
 /* ─── LAYOUT ─── */
-.layout{display:grid;grid-template-columns:260px 1fr;min-height:calc(100vh - 53px);}
-.sidebar{background:var(--surface);border-right:1px solid var(--border);padding:16px 0;position:sticky;top:53px;height:calc(100vh - 53px);overflow-y:auto;}
+.layout{display:grid;grid-template-columns:1fr;}
+.sidebar{display:none !important;}
 .sb-sec{padding:0 14px;margin-bottom:20px;}
 .sb-lbl{font-family:'DM Mono',monospace;font-size:10px;color:var(--text-dim);letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px;}
 .main{padding:20px;overflow-y:auto;}
@@ -604,8 +604,8 @@ body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text
     <div class="sb-lbl">全体進捗</div>
     <div class="tp">
       <div class="tp-row"><span style="font-size:11px;color:var(--text-sub)" id="progress-label">確認済み科目</span>
-        <span><span class="tp-val" id="good-count">1</span><span class="tp-unit" id="subject-total"> / 12</span></span></div>
-      <div class="ptrack"><div class="pfill" id="pfill" style="width: 10%;"></div></div>
+        <span><span class="tp-val" id="good-count">0</span><span class="tp-unit" id="subject-total"> / 12</span></span></div>
+      <div class="ptrack"><div class="pfill" id="pfill" style="width:0%"></div></div>
     </div>
   </div>
   <div class="sb-sec">
@@ -619,7 +619,7 @@ body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text
   </div>
   <div class="sb-sec">
     <div class="sb-lbl">今日やること</div>
-    <div class="tlist" id="today-list"><div class="titem" onclick="switchView(&#39;study&#39;);setTimeout(()=&gt;toggleDetail(&#39;s01&#39;),100)"><span class="tbadge" style="background:var(--s-none);color:var(--c-none);">✗</span><span>健康づくり</span></div><div class="titem" onclick="switchView(&#39;study&#39;);setTimeout(()=&gt;toggleDetail(&#39;s02&#39;),100)"><span class="tbadge" style="background:var(--s-none);color:var(--c-none);">✗</span><span>運動トレーニングの基礎</span></div><div class="titem" onclick="switchView(&#39;study&#39;);setTimeout(()=&gt;toggleDetail(&#39;s03&#39;),100)"><span class="tbadge" style="background:var(--s-none);color:var(--c-none);">✗</span><span>フィットネス産業概論</span></div><div class="titem" onclick="switchView(&#39;study&#39;);setTimeout(()=&gt;toggleDetail(&#39;s04&#39;),100)"><span class="tbadge" style="background:var(--s-none);color:var(--c-none);">✗</span><span>店舗運営</span></div><div class="titem" onclick="switchView(&#39;study&#39;);setTimeout(()=&gt;toggleDetail(&#39;s05&#39;),100)"><span class="tbadge" style="background:var(--s-none);color:var(--c-none);">✗</span><span>イベント・企画運営（財務）</span></div></div>
+    <div class="tlist" id="today-list"><div class="titem" onclick="switchView(&#39;study&#39;);setTimeout(()=&gt;toggleDetail(&#39;s03&#39;),100)"><span class="tbadge" style="background:var(--s-weak);color:var(--c-weak);">△</span><span>フィットネス産業概論</span></div><div class="titem" onclick="switchView(&#39;study&#39;);setTimeout(()=&gt;toggleDetail(&#39;s07&#39;),100)"><span class="tbadge" style="background:var(--s-weak);color:var(--c-weak);">△</span><span>顧客マネジメント</span></div><div class="titem" onclick="switchView(&#39;study&#39;);setTimeout(()=&gt;toggleDetail(&#39;s08&#39;),100)"><span class="tbadge" style="background:var(--s-weak);color:var(--c-weak);">△</span><span>顧客対応</span></div><div class="titem" onclick="switchView(&#39;study&#39;);setTimeout(()=&gt;toggleDetail(&#39;s01&#39;),100)"><span class="tbadge" style="background:var(--s-none);color:var(--c-none);">✗</span><span>健康づくり</span></div><div class="titem" onclick="switchView(&#39;study&#39;);setTimeout(()=&gt;toggleDetail(&#39;s02&#39;),100)"><span class="tbadge" style="background:var(--s-none);color:var(--c-none);">✗</span><span>運動トレーニングの基礎</span></div></div>
   </div>
 </aside>
 
@@ -741,11 +741,6 @@ body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text
   
 
   <div id="view-study" style="display:none">
-    <div style="margin-bottom:10px;">
-      <button onclick="switchView(&#39;check&#39;)" style="font-size:12px;color:var(--text-sub);
-        background:none;border:1px solid var(--border);border-radius:7px;padding:6px 14px;
-        cursor:pointer;font-family:&#39;Noto Sans JP&#39;,sans-serif;">← 現状把握に戻る</button>
-    </div>
     <div class="study-guide-box" style="padding:10px 16px;cursor:pointer;" onclick="var b=this.querySelector(&#39;.sgb-body&#39;);var a=this.querySelector(&#39;.sgb-arrow&#39;);if(b.style.display===&#39;none&#39;){b.style.display=&#39;&#39;;a.textContent=&#39;▲&#39;;}else{b.style.display=&#39;none&#39;;a.textContent=&#39;▶&#39;;}">
       <div style="display:flex;align-items:center;justify-content:space-between;">
         <div class="sgb-title" style="margin-bottom:0;">使い方を見る</div>
@@ -1472,6 +1467,7 @@ function setFlowState(state){
   [fg,gt,lp,qi,qq,qr,qa,vs,cs,cq].forEach(function(el){if(el)el.style.display='none';});
   if(gm)gm.classList.remove('open');
   if(br)br.style.display='none';
+  var allBtn=document.getElementById('show-all-chapters-btn');if(allBtn)allBtn.style.display='none';
   if(vta)vta.style.display='none';
   var pgb=document.getElementById('persona-grade-bar');
   vc.style.display='';
@@ -1481,23 +1477,47 @@ function setFlowState(state){
     if(vta)vta.style.display='';
     if(fg)fg.style.display='';if(gt)gt.style.display='';if(lp)lp.style.display='';
     if(qa)qa.style.display='';if(qi)qi.style.display='';
+    if(pgb)pgb.style.display='';
   }else if(state==='B'){
     // チェック中
     if(qa)qa.style.display='';if(qq)qq.style.display='';
+    if(pgb)pgb.style.display='';
   }else if(state==='C'){
     // チェック完了：結果＋学習カード
     if(qa)qa.style.display='';if(qr)qr.style.display='';
-    if(vs){vs.style.display='';renderStudy();}
+    if(pgb)pgb.style.display='';
   }else if(state==='D'){
-    // 詳細チェック導入：他の要素は全部隠す
+    // 詳細チェック導入
     if(cs)cs.style.display='';
   }else if(state==='E'){
     // 詳細チェック実施中
     if(cq)cq.style.display='';
+  }else if(state==='F'){
+    // 学習一覧：view-checkを完全に隠してview-studyだけ表示
+    vc.style.display='none';
+    if(vs){vs.style.display='';renderStudy();}
+    if(br)br.style.display='';
+    if(pgb)pgb.style.display='';
+    // 苦手な章（✗苦手・△あやふや）だけ表示、それ以外は非表示
+    document.querySelectorAll('#sgrid .scard').forEach(function(el){
+      var qc=el.getAttribute('data-qc');
+      if(qc==='no'||qc==='vague'){
+        el.style.display='';
+      } else {
+        el.style.display='none';
+      }
+    });
+    // 「すべての章を見る」ボタン追加
+    var allBtn=document.getElementById('show-all-chapters-btn');
+    if(!allBtn){
+      allBtn=document.createElement('div');
+      allBtn.id='show-all-chapters-btn';
+      allBtn.style.cssText='text-align:center;padding:16px 0;';
+      allBtn.innerHTML='<button onclick="showAllChapters()" style="font-size:13px;color:var(--accent);background:none;border:1px solid var(--accent);border-radius:8px;padding:10px 24px;cursor:pointer;">得意な章も含めてすべて見る ▼</button>';
+      document.getElementById('sgrid').after(allBtn);
+    }
+    allBtn.style.display='';
   }
-  // persona-grade-barは常に表示するが、状態D/Eではヘッダーバーのみで十分
-  var pgb=document.getElementById('persona-grade-bar');
-  if(pgb) pgb.style.display=(state==='D'||state==='E')?'none':'';
 }
 function switchView(v){
   currentView=v;
@@ -1505,87 +1525,14 @@ function switchView(v){
   setFlowState(qcDone?'C':'A');
 }
 function showStudyFromResult(){
-  // v2: 全部隠して苦手な章の詳細パネルだけ表示
-  document.getElementById('view-check').style.display='none';
-  document.getElementById('view-study').style.display='';
-  renderStudy();
-  // 苦手な章IDリスト作成
-  var weakIds=[];
-  document.querySelectorAll('#sgrid .scard').forEach(function(el){
-    if(el.style.display!=='none') weakIds.push(el.getAttribute('data-id'));
-  });
-  window._weakIds=weakIds;
-  window._weakIdx=0;
-  if(weakIds.length>0) openWeakStep(0);
+  setFlowState('F');
   window.scrollTo({top:0,behavior:'smooth'});
 }
-
-function openWeakStep(idx){
-  var ids=window._weakIds||[];
-  if(idx<0) idx=0;
-  if(idx>=ids.length){
-    // v2: 全章完了メッセージ
-    document.querySelector('.study-guide-box').style.display='none';
-    document.querySelector('.grid-hdr').style.display='none';
-    document.getElementById('sgrid').style.display='none';
-    var dp=document.getElementById('dpanel');
-    dp.innerHTML='<div style="text-align:center;padding:40px 20px;"><div style="font-size:32px;margin-bottom:16px;">🎉</div><div style="font-size:16px;font-weight:700;color:var(--text);margin-bottom:12px;">おつかれさまでした！</div><div style="font-size:14px;color:var(--text-sub);line-height:1.8;margin-bottom:24px;">苦手な章の確認が完了しました。<br>理解が深まったと感じたら、もう一度簡易チェックを受けてみましょう。<br>前回よりスコアが上がっているはずです。</div><div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;"><button onclick="updateFlowState();startQuickCheck();" class="flow-btn-primary" style="width:auto;padding:12px 24px;">もう一度簡易チェック</button><button onclick="finishWeakStudy()" class="flow-btn-secondary">すべての章を見る</button></div></div>';
-    var nav=document.getElementById('weak-step-nav');if(nav)nav.remove();
-    window.scrollTo({top:0,behavior:'smooth'});
-    return;
-  }
-  window._weakIdx=idx;
-  // sgrid・使い方・タイトル行を全部隠す
-  document.querySelector('.study-guide-box').style.display='none';
-  document.querySelector('.grid-hdr').style.display='none';
-  document.getElementById('sgrid').style.display='none';
-  // 詳細パネルを表示
-  toggleDetail(ids[idx]);
-  // ナビゲーション追加
-  var nav=document.getElementById('weak-step-nav');
-  if(!nav){
-    nav=document.createElement('div');
-    nav.id='weak-step-nav';
-    document.getElementById('dpanel').after(nav);
-  }
-  nav.style.cssText='text-align:center;padding:16px 0;display:flex;gap:10px;justify-content:center;flex-wrap:wrap;align-items:center;';
-  // 進捗バー
-  var doneCount=0;
-  ids.forEach(function(sid){if(status[sid]==='good'||status[sid]==='ok')doneCount++;});
-  var pct=Math.round(doneCount/ids.length*100);
-  var h='<div style="width:100%;margin-bottom:10px;"><div style="font-size:12px;color:var(--text-sub);margin-bottom:4px;">'+(idx+1)+'/'+ids.length+'章　（確認済み '+doneCount+'/'+ids.length+'）</div><div style="height:4px;background:var(--border);border-radius:2px;"><div style="height:4px;background:#059669;border-radius:2px;width:'+pct+'%;transition:width .3s;"></div></div></div>';
-  if(idx>0) h+='<button onclick="openWeakStep('+(idx-1)+')" class="flow-btn-secondary" style="padding:8px 16px;">← 前</button>';
-  if(idx<ids.length-1) h+='<button onclick="skipToNext()" class="flow-btn-primary" style="width:auto;padding:10px 24px;">次の章へ →</button>';
-  else h+='<button onclick="finishWeakStudy()" class="flow-btn-primary" style="width:auto;padding:10px 24px;">完了 →</button>';
-  h+='<br><button onclick="finishWeakStudy()" style="font-size:12px;color:var(--text-dim);background:none;border:none;cursor:pointer;margin-top:8px;text-decoration:underline;">すべての章を見る</button>';
-  nav.innerHTML=h;
-  window.scrollTo({top:0,behavior:'smooth'});
-}
-
-function skipToNext(){
-  // 現在のパネルを閉じて次へ
-  var dp=document.getElementById('dpanel');
-  if(dp) dp.innerHTML='';
-  openWeakStep((window._weakIdx||0)+1);
-}
-
-function finishWeakStudy(){
-  // v2: 学習状況一覧を表示（結果画面には戻らない）
-  document.getElementById('view-check').style.display='none';
-  document.getElementById('view-study').style.display='';
-  document.querySelector('.study-guide-box').style.display='';
-  document.querySelector('.grid-hdr').style.display='';
-  document.getElementById('sgrid').style.display='';
-  var dp=document.getElementById('dpanel');if(dp)dp.innerHTML='';
-  var nav=document.getElementById('weak-step-nav');if(nav)nav.remove();
-  renderStudy();
-  // 全章表示（確認済みも含む）
+function showAllChapters(){
+  // 全章を表示
   document.querySelectorAll('#sgrid .scard').forEach(function(el){el.style.display='';});
-  document.querySelectorAll('[data-extra]').forEach(function(e){e.style.display='';});
-  var moreBtn=document.getElementById('show-more-btn');if(moreBtn)moreBtn.style.display='none';
-  // 「結果に戻る」ボタン表示
-  var br=document.getElementById('back-to-result-btn');if(br)br.style.display='';
-  window.scrollTo({top:0,behavior:'smooth'});
+  var btn=document.getElementById('show-all-chapters-btn');
+  if(btn)btn.style.display='none';
 }
 function updateFlowState(){
   var qcDone=Object.keys(quickAnswers).length>0;
@@ -1795,33 +1742,48 @@ function renderGrid(){
     :gmSorted;
   const hasQR=Object.keys(quickAnswers).length>0;
   const descHtml=hasQR
-    ?`<div style="font-size:13px;color:var(--text-sub);line-height:1.7;margin-bottom:16px;padding:12px 14px;background:var(--surface);border:1px solid var(--border);border-radius:8px;">簡易チェックの結果をもとに、苦手な章から並べています。<br><span style="color:#991B1B">⚠️ 苦手</span> → <span style="color:#92400E">△ あやふや</span> → <span style="color:#065F46">◎ できる</span> の順です。</div>`
+    ?`<div style="font-size:13px;color:var(--text-sub);line-height:1.7;margin-bottom:16px;padding:12px 14px;background:var(--surface);border:1px solid var(--border);border-radius:8px;">簡易チェックで「苦手」と「あやふや」だった章を表示しています。<br>学習したい章をタップしてください。</div>`
     :`<div style="font-size:13px;color:var(--text-sub);line-height:1.7;margin-bottom:16px;padding:12px 14px;background:var(--surface);border:1px solid var(--border);border-radius:8px;">あなたの業務に直結する章から並べています。<br><span style="color:#065F46">◎業務直結</span> → <span style="color:#1E40AF">○戦略</span> → <span style="color:#4B5563">△指導系</span> → <span style="color:#991B1B">▽受検用</span> の順です。</div>`;
-  document.getElementById('sgrid').innerHTML=descHtml+sorted.map((s,idx)=>{
-    const st=status[s.id]||'none';
-    const cl=checks[s.id]||[];
-    const done=cl.filter(Boolean).length;
-    const badge = chPri[s.id] ? priBadge[chPri[s.id]] : null;
-    const badgeHtml = badge ? `<span style="font-size:10px;padding:2px 8px;border-radius:4px;background:${badge.bg};color:${badge.color};font-weight:600;">${badge.label}</span>` : '';
-    const chap = chapRef[s.id]||'';
-    const qcA=quickAnswers[getQcId(s.id)];
-    const wm=qcA==='no'?'⚠️ ':qcA==='vague'?'△ ':'';
-    const isWeak = qcA==='no'||qcA==='vague';
-    const hideClass = (hasQR && !isWeak) ? ' style="display:none" data-extra="1"' : '';
-    return`<div class="scard" data-id="${s.id}" data-status="${st}" onclick="toggleDetail('${s.id}')"${hideClass}>
-      <div style="display:flex;align-items:center;gap:6px;margin-bottom:2px;">
-        <span style="font-size:11px;color:var(--text-dim);font-weight:500;">${wm}${chap}</span>
-        <span style="margin-left:auto;">${badgeHtml}</span>
-      </div>
-      <div class="sc-name">${s.name}</div>
-      <div class="sc-ess">${s.essence.replace(/\n/g,' ')}</div>
-      <div class="sc-foot">
-        <span class="sc-cnt">${done}/${s.checklist.length} チェック</span>
-        <span class="sbadge ${SC[st]}">${SL[st]}</span>
-      </div>
-    </div>`;
-  }).join('')
-  + (hasQR ? `<div id="show-more-btn" style="text-align:center;padding:12px;"><button onclick="document.querySelectorAll('[data-extra]').forEach(e=>e.style.display='');document.getElementById('show-more-btn').style.display='none';" style="font-size:14px;color:var(--accent);background:none;border:1px solid var(--accent);border-radius:8px;padding:10px 24px;cursor:pointer;font-family:'Noto Sans JP',sans-serif;">その他の章も見る ▼</button></div>` : '');
+  // v2: 優先度グループ別に全章表示
+  const priGroups = {pri:[], strat:[], teach:[], exam:[]};
+  sorted.forEach(s => {
+    const pri = chPri[s.id] || 'exam';
+    priGroups[pri].push(s);
+  });
+  const priLabel = {pri:'◎ 業務直結', strat:'○ 戦略', teach:'△ 指導系', exam:'▽ 受検用'};
+  const priColor = {pri:'#059669', strat:'#2563EB', teach:'#6B7280', exam:'#DC2626'};
+  const qcLabel = {'no':'✗ 苦手','vague':'△ あやふや','yes':'◎ できる'};
+  const qcColor = {'no':'#991B1B','vague':'#92400E','yes':'#065F46'};
+
+  let cardsHtml = descHtml;
+  ['pri','strat','teach','exam'].forEach(pri => {
+    const group = priGroups[pri];
+    if(group.length === 0) return;
+    const doneCount = group.filter(s => status[s.id]==='good'||status[s.id]==='ok').length;
+    const progressText = doneCount > 0 ? `　✅ ${doneCount}/${group.length}章 確認済み` : '';
+    cardsHtml += `<div style="font-size:13px;font-weight:700;color:${priColor[pri]};padding:12px 0 6px 0;border-bottom:1px solid var(--border);margin-bottom:8px;">${priLabel[pri]}（${group.length}章）<span style="font-size:11px;font-weight:400;color:var(--text-dim);">${progressText}</span></div>`;
+    group.forEach(s => {
+      const st=status[s.id]||'none';
+      const cl=checks[s.id]||[];
+      const done=cl.filter(Boolean).length;
+      const badge = chPri[s.id] ? priBadge[chPri[s.id]] : null;
+      const chap = chapRef[s.id]||'';
+      const qcA=quickAnswers[getQcId(s.id)];
+      const qcBadge = qcA ? `<span style="font-size:10px;padding:2px 8px;border-radius:4px;background:${qcA==='no'?'#FEE2E2':qcA==='vague'?'#FEF3C7':'#D1FAE5'};color:${qcColor[qcA]||'#6B7280'};font-weight:600;">${qcLabel[qcA]||''}</span>` : '';
+      cardsHtml += `<div class="scard" data-id="${s.id}" data-status="${st}" data-qc="${qcA||"none"}" onclick="toggleDetail('${s.id}')">
+        <div style="display:flex;align-items:center;gap:6px;margin-bottom:2px;">
+          <span style="font-size:11px;color:var(--text-dim);font-weight:500;">${chap}</span>
+          <span style="margin-left:auto;">${qcBadge}</span>
+        </div>
+        <div class="sc-name">${s.name}</div>
+        <div class="sc-foot">
+          <span class="sc-cnt">${done}/${s.checklist.length} チェック</span>
+          <span class="sbadge ${SC[st]}">${SL[st]}</span>
+        </div>
+      </div>`;
+    });
+  });
+  document.getElementById('sgrid').innerHTML = cardsHtml;
 }
 
 function renderSidebar(){
@@ -1942,8 +1904,37 @@ function renderDetail(){
   setTimeout(()=>panel.scrollIntoView({behavior:'smooth',block:'start'}),50);
 }
 
-function toggleDetail(id){if(openId===id){closeDetail();return;}openId=id;activeTab='skills';renderStudy();}
-function closeDetail(){openId=null;if(currentView==='study')renderStudy();}
+function toggleDetail(id){
+  if(openId===id){closeDetail();return;}
+  openId=id;activeTab='skills';
+  // v2: 一覧を隠して選んだ章だけ表示
+  var sgbox=document.querySelector('.study-guide-box');if(sgbox)sgbox.style.display='none';
+  var ghdr=document.querySelector('.grid-hdr');if(ghdr)ghdr.style.display='none';
+  var sg=document.getElementById('sgrid');if(sg)sg.style.display='none';
+  // 「一覧に戻る」ボタン
+  var nb=document.getElementById('detail-back-btn');
+  if(!nb){
+    nb=document.createElement('button');
+    nb.id='detail-back-btn';
+    nb.style.cssText='font-size:13px;color:var(--accent);background:none;border:none;cursor:pointer;font-family:"Noto Sans JP",sans-serif;text-decoration:underline;padding:8px 0;margin-bottom:8px;display:block;';
+    nb.textContent='← 章の一覧に戻る';
+    nb.onclick=function(){closeDetail();};
+    document.getElementById('dpanel').before(nb);
+  }
+  nb.style.display='';
+  renderStudy();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function closeDetail(){
+  openId=null;
+  // v2: 一覧を復帰
+  var sgbox=document.querySelector('.study-guide-box');if(sgbox)sgbox.style.display='';
+  var ghdr=document.querySelector('.grid-hdr');if(ghdr)ghdr.style.display='';
+  var sg=document.getElementById('sgrid');if(sg)sg.style.display='';
+  var nb=document.getElementById('detail-back-btn');if(nb)nb.style.display='none';
+  if(currentView==='study')renderStudy();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
 function switchTab(tab){activeTab=tab;renderDetail();}
 function setStatus(id,val){status[id]=val;svs(status);renderStudy();}
 function toggleCheck(id,idx){
@@ -2585,13 +2576,17 @@ function renderQuickResult(){
       '現在の知識レベルであれば、FCM技能検定'+(selectedGrade===2?'2級':'3級')+'の受検タイミングです。<br>'+
       '詳細チェック（全問）で確認してから受検申込へ進むことをおすすめします。</div>';
   } else {
-    const items = [...weak,...vague].slice(0,3);
-    const list = items.map(item=>'<strong>'+item.num.replace(/^[①②③④⑤⑥⑦⑧⑨⑩]+[-\d]*\s*/,'')+'</strong>').join('・');
+    const totalQ = qs.length;
+    const weakCount = weak.length;
+    const vagueCount = vague.length;
+    const okCount = totalQ - weakCount - vagueCount;
     msg.innerHTML = '<div style="font-size:13px;color:var(--text-sub);line-height:1.7;'+
       'padding:12px 14px;background:var(--surface);border-radius:9px;margin-bottom:10px;">'+
-      '<strong style="color:var(--text)">'+list+'</strong>'+
-      (items.length>0?'の理解が不足しています。':'')+
-      '詳細チェックで弱点の節を特定するか、直接学習モードで該当科目を確認してください。</div>';
+      '全'+totalQ+'科目中、<strong style="color:#DC2626">✗ 苦手 '+weakCount+'科目</strong>'+
+      (vagueCount>0?' ・ <strong style="color:#D97706">△ あやふや '+vagueCount+'科目</strong>':'')+
+      (okCount>0?' ・ <strong style="color:#059669">◎ できる '+okCount+'科目</strong>':'')+
+      '<br>下のボタンから、苦手な章の一覧に進みます。学習したい章を選んでください。'+
+      '<br><span style="font-size:11px;color:var(--text-dim);">※1つの章に複数の科目が含まれるため、章の数と科目の数は異なります。</span></div>';
   }
 
   const quickStatus = {};
