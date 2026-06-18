@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0089)file:///C:/Users/user/Downloads/FCM_Web%E5%AD%A6%E7%BF%92%E3%83%8A%E3%83%93_py_v2_25.html -->
+<!-- saved from url=(0089)file:///C:/Users/user/Downloads/FCM_Web%E5%AD%A6%E7%BF%92%E3%83%8A%E3%83%93_py_v2_27.html -->
 <html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -619,7 +619,7 @@ body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text
   </div>
   <div class="sb-sec">
     <div class="sb-lbl">今日やること</div>
-    <div class="tlist" id="today-list"><div class="titem" onclick="switchView(&#39;study&#39;);setTimeout(()=&gt;toggleDetail(&#39;s03&#39;),100)"><span class="tbadge" style="background:var(--s-weak);color:var(--c-weak);">△</span><span>フィットネス産業概論</span></div><div class="titem" onclick="switchView(&#39;study&#39;);setTimeout(()=&gt;toggleDetail(&#39;s07&#39;),100)"><span class="tbadge" style="background:var(--s-weak);color:var(--c-weak);">△</span><span>顧客マネジメント</span></div><div class="titem" onclick="switchView(&#39;study&#39;);setTimeout(()=&gt;toggleDetail(&#39;s08&#39;),100)"><span class="tbadge" style="background:var(--s-weak);color:var(--c-weak);">△</span><span>顧客対応</span></div><div class="titem" onclick="switchView(&#39;study&#39;);setTimeout(()=&gt;toggleDetail(&#39;s01&#39;),100)"><span class="tbadge" style="background:var(--s-none);color:var(--c-none);">✗</span><span>健康づくり</span></div><div class="titem" onclick="switchView(&#39;study&#39;);setTimeout(()=&gt;toggleDetail(&#39;s02&#39;),100)"><span class="tbadge" style="background:var(--s-none);color:var(--c-none);">✗</span><span>運動トレーニングの基礎</span></div></div>
+    <div class="tlist" id="today-list"><div class="titem" onclick="switchView(&#39;study&#39;);setTimeout(()=&gt;toggleDetail(&#39;s01&#39;),100)"><span class="tbadge" style="background:var(--s-none);color:var(--c-none);">✗</span><span>健康づくり</span></div><div class="titem" onclick="switchView(&#39;study&#39;);setTimeout(()=&gt;toggleDetail(&#39;s02&#39;),100)"><span class="tbadge" style="background:var(--s-none);color:var(--c-none);">✗</span><span>運動トレーニングの基礎</span></div><div class="titem" onclick="switchView(&#39;study&#39;);setTimeout(()=&gt;toggleDetail(&#39;s03&#39;),100)"><span class="tbadge" style="background:var(--s-none);color:var(--c-none);">✗</span><span>フィットネス産業概論</span></div><div class="titem" onclick="switchView(&#39;study&#39;);setTimeout(()=&gt;toggleDetail(&#39;s04&#39;),100)"><span class="tbadge" style="background:var(--s-none);color:var(--c-none);">✗</span><span>店舗運営</span></div><div class="titem" onclick="switchView(&#39;study&#39;);setTimeout(()=&gt;toggleDetail(&#39;s05&#39;),100)"><span class="tbadge" style="background:var(--s-none);color:var(--c-none);">✗</span><span>イベント・企画運営（財務）</span></div></div>
   </div>
 </aside>
 
@@ -1507,16 +1507,6 @@ function setFlowState(state){
         el.style.display='none';
       }
     });
-    // 「すべての章を見る」ボタン追加
-    var allBtn=document.getElementById('show-all-chapters-btn');
-    if(!allBtn){
-      allBtn=document.createElement('div');
-      allBtn.id='show-all-chapters-btn';
-      allBtn.style.cssText='text-align:center;padding:16px 0;';
-      allBtn.innerHTML='<button onclick="showAllChapters()" style="font-size:13px;color:var(--accent);background:none;border:1px solid var(--accent);border-radius:8px;padding:10px 24px;cursor:pointer;">得意な章も含めてすべて見る ▼</button>';
-      document.getElementById('sgrid').after(allBtn);
-    }
-    allBtn.style.display='';
   }
 }
 function switchView(v){
@@ -1529,10 +1519,11 @@ function showStudyFromResult(){
   window.scrollTo({top:0,behavior:'smooth'});
 }
 function showAllChapters(){
-  // 全章を表示
   document.querySelectorAll('#sgrid .scard').forEach(function(el){el.style.display='';});
   var btn=document.getElementById('show-all-chapters-btn');
   if(btn)btn.style.display='none';
+  var btnTop=document.getElementById('show-all-chapters-btn-top');
+  if(btnTop)btnTop.style.display='none';
 }
 function updateFlowState(){
   var qcDone=Object.keys(quickAnswers).length>0;
@@ -1742,7 +1733,7 @@ function renderGrid(){
     :gmSorted;
   const hasQR=Object.keys(quickAnswers).length>0;
   const descHtml=hasQR
-    ?`<div style="font-size:13px;color:var(--text-sub);line-height:1.7;margin-bottom:16px;padding:12px 14px;background:var(--surface);border:1px solid var(--border);border-radius:8px;">簡易チェックで「苦手」と「あやふや」だった章を表示しています。<br>学習したい章をタップしてください。</div>`
+    ?`<div style="font-size:13px;color:var(--text-sub);line-height:1.7;margin-bottom:16px;padding:12px 14px;background:var(--surface);border:1px solid var(--border);border-radius:8px;">簡易チェックで「苦手」と「あやふや」だった章を表示しています。<br>学習したい章をタップしてください。<div style="margin-top:10px;"><button id="show-all-chapters-btn-top" onclick="showAllChapters()" style="font-size:13px;color:var(--accent);background:none;border:1px solid var(--accent);border-radius:8px;padding:8px 20px;cursor:pointer;">得意な章も含めてすべて見る ▼</button></div></div>`
     :`<div style="font-size:13px;color:var(--text-sub);line-height:1.7;margin-bottom:16px;padding:12px 14px;background:var(--surface);border:1px solid var(--border);border-radius:8px;">あなたの業務に直結する章から並べています。<br><span style="color:#065F46">◎業務直結</span> → <span style="color:#1E40AF">○戦略</span> → <span style="color:#4B5563">△指導系</span> → <span style="color:#991B1B">▽受検用</span> の順です。</div>`;
   // v2: 優先度グループ別に全章表示
   const priGroups = {pri:[], strat:[], teach:[], exam:[]};
