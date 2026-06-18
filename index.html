@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0089)file:///C:/Users/user/Downloads/FCM_Web%E5%AD%A6%E7%BF%92%E3%83%8A%E3%83%93_py_v2_27.html -->
+<!-- saved from url=(0089)file:///C:/Users/user/Downloads/FCM_Web%E5%AD%A6%E7%BF%92%E3%83%8A%E3%83%93_py_v2_30.html -->
 <html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -619,7 +619,7 @@ body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text
   </div>
   <div class="sb-sec">
     <div class="sb-lbl">今日やること</div>
-    <div class="tlist" id="today-list"><div class="titem" onclick="switchView(&#39;study&#39;);setTimeout(()=&gt;toggleDetail(&#39;s01&#39;),100)"><span class="tbadge" style="background:var(--s-none);color:var(--c-none);">✗</span><span>健康づくり</span></div><div class="titem" onclick="switchView(&#39;study&#39;);setTimeout(()=&gt;toggleDetail(&#39;s02&#39;),100)"><span class="tbadge" style="background:var(--s-none);color:var(--c-none);">✗</span><span>運動トレーニングの基礎</span></div><div class="titem" onclick="switchView(&#39;study&#39;);setTimeout(()=&gt;toggleDetail(&#39;s03&#39;),100)"><span class="tbadge" style="background:var(--s-none);color:var(--c-none);">✗</span><span>フィットネス産業概論</span></div><div class="titem" onclick="switchView(&#39;study&#39;);setTimeout(()=&gt;toggleDetail(&#39;s04&#39;),100)"><span class="tbadge" style="background:var(--s-none);color:var(--c-none);">✗</span><span>店舗運営</span></div><div class="titem" onclick="switchView(&#39;study&#39;);setTimeout(()=&gt;toggleDetail(&#39;s05&#39;),100)"><span class="tbadge" style="background:var(--s-none);color:var(--c-none);">✗</span><span>イベント・企画運営（財務）</span></div></div>
+    <div class="tlist" id="today-list"><div class="titem" onclick="switchView(&#39;study&#39;);setTimeout(()=&gt;toggleDetail(&#39;s03&#39;),100)"><span class="tbadge" style="background:var(--s-weak);color:var(--c-weak);">△</span><span>フィットネス産業概論</span></div><div class="titem" onclick="switchView(&#39;study&#39;);setTimeout(()=&gt;toggleDetail(&#39;s07&#39;),100)"><span class="tbadge" style="background:var(--s-weak);color:var(--c-weak);">△</span><span>顧客マネジメント</span></div><div class="titem" onclick="switchView(&#39;study&#39;);setTimeout(()=&gt;toggleDetail(&#39;s08&#39;),100)"><span class="tbadge" style="background:var(--s-weak);color:var(--c-weak);">△</span><span>顧客対応</span></div><div class="titem" onclick="switchView(&#39;study&#39;);setTimeout(()=&gt;toggleDetail(&#39;s01&#39;),100)"><span class="tbadge" style="background:var(--s-none);color:var(--c-none);">✗</span><span>健康づくり</span></div><div class="titem" onclick="switchView(&#39;study&#39;);setTimeout(()=&gt;toggleDetail(&#39;s02&#39;),100)"><span class="tbadge" style="background:var(--s-none);color:var(--c-none);">✗</span><span>運動トレーニングの基礎</span></div></div>
   </div>
 </aside>
 
@@ -703,7 +703,6 @@ body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text
             <button class="flow-btn-primary" onclick="showStudyFromResult()">苦手な章から学習を始める →</button>
             <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap;justify-content:center;">
               <button class="flow-btn-secondary" onclick="startQuickCheck()">もう一度チェック</button>
-              <button class="flow-btn-secondary" onclick="goToFullCheck()">詳細チェック</button>
             </div>
           </div>
         </div>
@@ -1733,8 +1732,8 @@ function renderGrid(){
     :gmSorted;
   const hasQR=Object.keys(quickAnswers).length>0;
   const descHtml=hasQR
-    ?`<div style="font-size:13px;color:var(--text-sub);line-height:1.7;margin-bottom:16px;padding:12px 14px;background:var(--surface);border:1px solid var(--border);border-radius:8px;">簡易チェックで「苦手」と「あやふや」だった章を表示しています。<br>学習したい章をタップしてください。<div style="margin-top:10px;"><button id="show-all-chapters-btn-top" onclick="showAllChapters()" style="font-size:13px;color:var(--accent);background:none;border:1px solid var(--accent);border-radius:8px;padding:8px 20px;cursor:pointer;">得意な章も含めてすべて見る ▼</button></div></div>`
-    :`<div style="font-size:13px;color:var(--text-sub);line-height:1.7;margin-bottom:16px;padding:12px 14px;background:var(--surface);border:1px solid var(--border);border-radius:8px;">あなたの業務に直結する章から並べています。<br><span style="color:#065F46">◎業務直結</span> → <span style="color:#1E40AF">○戦略</span> → <span style="color:#4B5563">△指導系</span> → <span style="color:#991B1B">▽受検用</span> の順です。</div>`;
+    ?`<div style="grid-column:1/-1;font-size:13px;color:var(--text-sub);line-height:1.7;margin-bottom:8px;padding:12px 14px;background:var(--surface);border:1px solid var(--border);border-radius:8px;">簡易チェックで「苦手」と「あやふや」だった章を表示しています。<br>学習したい章をタップしてください。<div style="margin-top:10px;"><button id="show-all-chapters-btn-top" onclick="showAllChapters()" style="font-size:13px;color:var(--accent);background:none;border:1px solid var(--accent);border-radius:8px;padding:8px 20px;cursor:pointer;">得意な章も含めてすべて見る ▼</button></div></div>`
+    :`<div style="grid-column:1/-1;font-size:13px;color:var(--text-sub);line-height:1.7;margin-bottom:8px;padding:12px 14px;background:var(--surface);border:1px solid var(--border);border-radius:8px;">あなたの業務に直結する章から並べています。<br><span style="color:#065F46">◎業務直結</span> → <span style="color:#1E40AF">○戦略</span> → <span style="color:#4B5563">△指導系</span> → <span style="color:#991B1B">▽受検用</span> の順です。</div>`;
   // v2: 優先度グループ別に全章表示
   const priGroups = {pri:[], strat:[], teach:[], exam:[]};
   sorted.forEach(s => {
@@ -1752,7 +1751,7 @@ function renderGrid(){
     if(group.length === 0) return;
     const doneCount = group.filter(s => status[s.id]==='good'||status[s.id]==='ok').length;
     const progressText = doneCount > 0 ? `　✅ ${doneCount}/${group.length}章 確認済み` : '';
-    cardsHtml += `<div style="font-size:13px;font-weight:700;color:${priColor[pri]};padding:12px 0 6px 0;border-bottom:1px solid var(--border);margin-bottom:8px;">${priLabel[pri]}（${group.length}章）<span style="font-size:11px;font-weight:400;color:var(--text-dim);">${progressText}</span></div>`;
+    cardsHtml += `<div style="grid-column:1/-1;font-size:13px;font-weight:700;color:${priColor[pri]};padding:12px 0 6px 0;border-bottom:1px solid var(--border);margin-bottom:4px;">${priLabel[pri]}（${group.length}章）<span style="font-size:11px;font-weight:400;color:var(--text-dim);">${progressText}</span></div>`;
     group.forEach(s => {
       const st=status[s.id]||'none';
       const cl=checks[s.id]||[];
@@ -2565,7 +2564,7 @@ function renderQuickResult(){
     msg.innerHTML = '<div class="qr-ok-box">'+
       '<strong>全科目「できる」と回答しました。</strong><br>'+
       '現在の知識レベルであれば、FCM技能検定'+(selectedGrade===2?'2級':'3級')+'の受検タイミングです。<br>'+
-      '詳細チェック（全問）で確認してから受検申込へ進むことをおすすめします。</div>';
+      '各章のチェックリストで確認してから受検申込へ進むことをおすすめします。</div>';
   } else {
     const totalQ = qs.length;
     const weakCount = weak.length;
