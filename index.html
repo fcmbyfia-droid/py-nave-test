@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0089)file:///C:/Users/user/Downloads/FCM_Web%E5%AD%A6%E7%BF%92%E3%83%8A%E3%83%93_py_v2_30.html -->
+<!-- saved from url=(0089)file:///C:/Users/user/Downloads/FCM_Web%E5%AD%A6%E7%BF%92%E3%83%8A%E3%83%93_py_v2_38.html -->
 <html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -573,6 +573,7 @@ body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text
 <div id="persona-select-area" style="">
       <div class="persona-select-screen">
         <div class="ps-tool-title">🧘 ピラティス・ヨガ指導者のための FCM Web学習ナビ</div>
+        <div style="font-size:14px;color:var(--text);line-height:1.8;margin-bottom:16px;text-align:center;font-weight:500;">ようこそ！まず級を選んで、簡易チェック（10問・約2分）で<br>あなたの苦手な業務分野を見つけましょう。</div>
         <div class="ps-tool-desc">スタジオ経営に必要なフロント・財務・労務の知識を、あなたの業務に沿って効率よく学べます。<br>
           このWeb学習ナビは、公式テキスト（Basic・Intermediate）を業務に直結した形で効率よく学ぶためのナビゲーションです。<br>
           受検予定がない方は、ガイドマップの◎業務直結の節のみご確認ください。</div>
@@ -604,8 +605,8 @@ body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text
     <div class="sb-lbl">全体進捗</div>
     <div class="tp">
       <div class="tp-row"><span style="font-size:11px;color:var(--text-sub)" id="progress-label">確認済み科目</span>
-        <span><span class="tp-val" id="good-count">0</span><span class="tp-unit" id="subject-total"> / 12</span></span></div>
-      <div class="ptrack"><div class="pfill" id="pfill" style="width:0%"></div></div>
+        <span><span class="tp-val" id="good-count">1</span><span class="tp-unit" id="subject-total"> / 12</span></span></div>
+      <div class="ptrack"><div class="pfill" id="pfill" style="width: 10%;"></div></div>
     </div>
   </div>
   <div class="sb-sec">
@@ -619,7 +620,7 @@ body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text
   </div>
   <div class="sb-sec">
     <div class="sb-lbl">今日やること</div>
-    <div class="tlist" id="today-list"><div class="titem" onclick="switchView(&#39;study&#39;);setTimeout(()=&gt;toggleDetail(&#39;s03&#39;),100)"><span class="tbadge" style="background:var(--s-weak);color:var(--c-weak);">△</span><span>フィットネス産業概論</span></div><div class="titem" onclick="switchView(&#39;study&#39;);setTimeout(()=&gt;toggleDetail(&#39;s07&#39;),100)"><span class="tbadge" style="background:var(--s-weak);color:var(--c-weak);">△</span><span>顧客マネジメント</span></div><div class="titem" onclick="switchView(&#39;study&#39;);setTimeout(()=&gt;toggleDetail(&#39;s08&#39;),100)"><span class="tbadge" style="background:var(--s-weak);color:var(--c-weak);">△</span><span>顧客対応</span></div><div class="titem" onclick="switchView(&#39;study&#39;);setTimeout(()=&gt;toggleDetail(&#39;s01&#39;),100)"><span class="tbadge" style="background:var(--s-none);color:var(--c-none);">✗</span><span>健康づくり</span></div><div class="titem" onclick="switchView(&#39;study&#39;);setTimeout(()=&gt;toggleDetail(&#39;s02&#39;),100)"><span class="tbadge" style="background:var(--s-none);color:var(--c-none);">✗</span><span>運動トレーニングの基礎</span></div></div>
+    <div class="tlist" id="today-list"><div class="titem" onclick="switchView(&#39;study&#39;);setTimeout(()=&gt;toggleDetail(&#39;s01&#39;),100)"><span class="tbadge" style="background:var(--s-none);color:var(--c-none);">✗</span><span>健康づくり</span></div><div class="titem" onclick="switchView(&#39;study&#39;);setTimeout(()=&gt;toggleDetail(&#39;s02&#39;),100)"><span class="tbadge" style="background:var(--s-none);color:var(--c-none);">✗</span><span>運動トレーニングの基礎</span></div><div class="titem" onclick="switchView(&#39;study&#39;);setTimeout(()=&gt;toggleDetail(&#39;s03&#39;),100)"><span class="tbadge" style="background:var(--s-none);color:var(--c-none);">✗</span><span>フィットネス産業概論</span></div><div class="titem" onclick="switchView(&#39;study&#39;);setTimeout(()=&gt;toggleDetail(&#39;s04&#39;),100)"><span class="tbadge" style="background:var(--s-none);color:var(--c-none);">✗</span><span>店舗運営</span></div><div class="titem" onclick="switchView(&#39;study&#39;);setTimeout(()=&gt;toggleDetail(&#39;s05&#39;),100)"><span class="tbadge" style="background:var(--s-none);color:var(--c-none);">✗</span><span>イベント・企画運営（財務）</span></div></div>
   </div>
 </aside>
 
@@ -699,8 +700,26 @@ body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text
           <div class="qr-title">簡易チェックの結果</div>
           <div class="qr-grid" id="qr-grid"></div>
           <div id="qr-message"></div>
-          <div class="qr-action">
-            <button class="flow-btn-primary" onclick="showStudyFromResult()">苦手な章から学習を始める →</button>
+          <div class="qr-action" style="grid-column:1/-1;">
+            <!-- メール登録エリア（未登録の場合のみ表示） -->
+            <div id="mail-register-area" style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:20px;margin-bottom:16px;text-align:left;">
+              <div style="font-size:14px;font-weight:700;color:var(--text);margin-bottom:8px;">📩 公式テキストの更新情報をお知らせします</div>
+              <div style="font-size:12px;color:var(--text-sub);line-height:1.7;margin-bottom:14px;">公式テキストの内容に関わる法改正・業界動向・事例などが生じた場合、FCMのWebに掲載します。掲載時にメールでお知らせします。</div>
+              <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:12px;">
+                <input type="text" id="reg-name" placeholder="お名前" style="padding:10px 12px;border:1px solid var(--border);border-radius:8px;font-size:14px;font-family:&#39;Noto Sans JP&#39;,sans-serif;color:var(--text);background:var(--bg);">
+                <input type="text" id="reg-org" placeholder="所属（会社名・スタジオ名等）" style="padding:10px 12px;border:1px solid var(--border);border-radius:8px;font-size:14px;font-family:&#39;Noto Sans JP&#39;,sans-serif;color:var(--text);background:var(--bg);">
+                <input type="email" id="reg-email" placeholder="メールアドレス" style="padding:10px 12px;border:1px solid var(--border);border-radius:8px;font-size:14px;font-family:&#39;Noto Sans JP&#39;,sans-serif;color:var(--text);background:var(--bg);">
+              </div>
+              <div style="font-size:10px;color:var(--text-dim);margin-bottom:12px;">※ご登録いただいた情報は、上記のお知らせ等にのみ使用します。</div>
+              <button class="flow-btn-primary" onclick="submitRegistration()">登録して学習を始める →</button>
+              <div style="text-align:center;margin-top:10px;">
+                <button onclick="skipRegistration()" style="font-size:13px;color:var(--text-dim);background:none;border:none;cursor:pointer;text-decoration:underline;font-family:&#39;Noto Sans JP&#39;,sans-serif;">登録せずに学習を始める →</button>
+              </div>
+            </div>
+            <!-- 登録済みの場合のボタン -->
+            <div id="already-registered" style="display:none;">
+              <button class="flow-btn-primary" onclick="showStudyFromResult()">苦手な章から学習を始める →</button>
+            </div>
             <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap;justify-content:center;">
               <button class="flow-btn-secondary" onclick="startQuickCheck()">もう一度チェック</button>
             </div>
@@ -1485,6 +1504,7 @@ function setFlowState(state){
     // チェック完了：結果＋学習カード
     if(qa)qa.style.display='';if(qr)qr.style.display='';
     if(pgb)pgb.style.display='';
+    checkRegistrationStatus();
   }else if(state==='D'){
     // 詳細チェック導入
     if(cs)cs.style.display='';
@@ -1516,6 +1536,45 @@ function switchView(v){
 function showStudyFromResult(){
   setFlowState('F');
   window.scrollTo({top:0,behavior:'smooth'});
+}
+
+// メール登録
+function submitRegistration(){
+  var name=document.getElementById('reg-name').value.trim();
+  var org=document.getElementById('reg-org').value.trim();
+  var email=document.getElementById('reg-email').value.trim();
+  if(!name){alert('お名前を入力してください。');return;}
+  if(!org){alert('所属を入力してください。');return;}
+  if(!email||email.indexOf('@')<1){alert('正しいメールアドレスを入力してください。');return;}
+  // Googleフォームに送信（URLはFIAが設定）
+  var formUrl='YOUR_GOOGLE_FORM_URL';
+  var persona=selectedPersona||'py';
+  var grade=selectedGrade===2?'Intermediate 2級':'Basic 3級';
+  var data=new URLSearchParams();
+  data.append('entry.NAME_ID',name);
+  data.append('entry.ORG_ID',org);
+  data.append('entry.EMAIL_ID',email);
+  data.append('entry.PERSONA_ID',persona);
+  data.append('entry.GRADE_ID',grade);
+  if(formUrl!=='YOUR_GOOGLE_FORM_URL'){
+    fetch(formUrl,{method:'POST',mode:'no-cors',body:data}).catch(function(){});
+  }
+  localStorage.setItem('fcm_registered','1');
+  document.getElementById('mail-register-area').style.display='none';
+  document.getElementById('already-registered').style.display='';
+  alert('ご登録ありがとうございます。学習を始めましょう！');
+  showStudyFromResult();
+}
+function skipRegistration(){
+  showStudyFromResult();
+}
+function checkRegistrationStatus(){
+  if(localStorage.getItem('fcm_registered')==='1'){
+    var reg=document.getElementById('mail-register-area');
+    var done=document.getElementById('already-registered');
+    if(reg)reg.style.display='none';
+    if(done)done.style.display='';
+  }
 }
 function showAllChapters(){
   document.querySelectorAll('#sgrid .scard').forEach(function(el){el.style.display='';});
@@ -1808,7 +1867,7 @@ function renderDetail(){
     <div class="itab ${activeTab==='check'?'active':''}" onclick="switchTab('check')">チェックリスト<span class="itab-badge">${s.checklist.length}</span></div>
     <div class="itab ${kwCount===0?'disabled':''} ${activeTab==='keywords'?'active':''}" ${kwCount>0?`onclick="switchTab('keywords')"`:'style="opacity:0.4;cursor:default;"'}>キーワード${kwCount>0?`<span class="itab-badge purple">${kwCount}</span>`:''}</div>
     <div class="itab ${activeTab==='questions'?'active':''}" onclick="switchTab('questions')">理解度質問<span class="itab-badge">${s.questions.length}</span></div>
-    ${hasPractice?`<div class="itab ${activeTab==='practice'?'active':''}" onclick="switchTab('practice')">実技練習<span class="itab-badge amber">${s.practice.length}</span></div>`:''}
+    ${''}
     ${hasPastExam?`<div class="itab ${activeTab==='pastexam'?'active':''}" onclick="switchTab('pastexam')">過去問</div>`:''}
   </div>`;
 
@@ -1883,7 +1942,7 @@ function renderDetail(){
     <button class="dp-close" onclick="closeDetail()">✕</button>
   </div>
   ${innerTabsHtml}
-  <div>${skillsHtml}${checkHtml}${kwHtml}${qHtml}${practiceHtml}${pastExamHtml}</div>
+  <div>${skillsHtml}${checkHtml}${kwHtml}${qHtml}${pastExamHtml}</div>
   <div class="dp-foot">
     <span class="rat-lbl">自己評価：</span>
     <div style="font-size:10px;color:var(--text-dim);margin-bottom:4px;">○理解できた＝テキストを読んで理解　◎確認済み＝問題で正解できた</div>
