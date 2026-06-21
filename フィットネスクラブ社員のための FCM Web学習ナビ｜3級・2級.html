@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0047)file:///C:/Users/user/Downloads/fshainn_v2.html -->
+<!-- saved from url=(0049)file:///C:/Users/user/Downloads/fshainn_v2_2.html -->
 <html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -581,7 +581,7 @@ body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text
         <div style="display:grid;grid-template-columns:1fr;gap:12px;margin-bottom:20px;">
           <button id="wali-btn-wa" onclick="selectSubPersona(&#39;wa&#39;)" style="display:block;padding:20px 16px;background:var(--surface);border:2px solid var(--border);border-radius:10px;cursor:pointer;text-align:left;transition:all .2s;">
             <div style="font-size:16px;font-weight:700;color:var(--text);margin-bottom:6px;">🌱 若手社員（入社1〜3年）</div>
-            <div style="font-size:13px;color:var(--text-sub);line-height:1.6;">現場の基礎固めに。全科目がほぼ毎日の業務に直結します。</div>
+            <div style="font-size:13px;color:var(--text-sub);line-height:1.6;">現場の基礎固めに。全分野がほぼ毎日の業務に直結します。</div>
           </button>
           <button id="wali-btn-li" onclick="selectSubPersona(&#39;li&#39;)" style="display:block;padding:20px 16px;background:var(--surface);border:2px solid var(--border);border-radius:10px;cursor:pointer;text-align:left;transition:all .2s;">
             <div style="font-size:16px;font-weight:700;color:var(--text);margin-bottom:6px;">👔 社員リーダー（主任・副支配人）</div>
@@ -614,7 +614,7 @@ body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text
   <div class="sb-sec">
     <div class="sb-lbl">全体進捗</div>
     <div class="tp">
-      <div class="tp-row"><span style="font-size:11px;color:var(--text-sub)" id="progress-label">確認済み科目</span>
+      <div class="tp-row"><span style="font-size:11px;color:var(--text-sub)" id="progress-label">確認済み業務分野</span>
         <span><span class="tp-val" id="good-count">0</span><span class="tp-unit" id="subject-total"> / 12</span></span></div>
       <div class="ptrack"><div class="pfill" id="pfill" style="width: 0%;"></div></div>
     </div>
@@ -654,7 +654,7 @@ body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text
         <div id="flow-guide"><div class="flow-guide-note"><strong>📝 使い方（2ステップ）</strong><br>STEP 1：まず簡易チェックで苦手な章を見つける（約2分）<br>STEP 2：苦手な章からテキストを開いて学ぶ</div></div></div>
         <div style="margin-top:10px;" id="guide-toggle-wrap">
           <div class="guide-toggle-box">
-            <div class="guide-toggle-desc">📍 あなたの仕事に直結する科目が一目でわかります。まずはこちらで全体像を確認しましょう。</div>
+            <div class="guide-toggle-desc">📍 あなたの仕事に直結する業務分野が一目でわかります。まずはこちらで全体像を確認しましょう。</div>
             <button onclick="toggleGuideMap()" id="guide-toggle-btn" class="guide-toggle-btn-main">▶ ガイドマップを開く</button>
           </div>
         </div>
@@ -744,7 +744,7 @@ body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text
     <div id="check-start-view" style="display:none">
       <div class="check-start-card">
         <h2 id="check-start-title">🔑  まず現状を把握しましょう</h2>
-        <p id="check-start-desc"><strong>24時間ジム運営者</strong>　2級（Intermediate）<br>全12科目・74問に「できる・だいたいできる・あやふや・できない」で答えるだけ。<br>得意科目と苦手科目が一目でわかります。<br><span style="color:var(--accent3);font-size:11px;">⚠️ ② 運動トレーニングはBasicテキスト参照（3級タブで確認）</span></p>
+        <p id="check-start-desc"><strong>24時間ジム運営者</strong>　2級（Intermediate）<br>全12業務分野・74問に「できる・だいたいできる・あやふや・できない」で答えるだけ。<br>得意分野と苦手分野が一目でわかります。<br><span style="color:var(--accent3);font-size:11px;">⚠️ ② 運動トレーニングはBasicテキスト参照（3級タブで確認）</span></p>
         <button class="start-btn" onclick="startCheck()">現状把握チェックを開始する</button>
         <button class="gm-back" style="margin-top:10px;display:block;text-align:center" onclick="backToQuickCheck()">← 簡易チェックに戻る</button>
       </div>
@@ -778,8 +778,8 @@ body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text
         <span class="sgb-arrow" style="font-size:12px;color:var(--text-dim);">▶</span>
       </div>
       <div class="sgb-body" style="display:none;margin-top:10px;">
-        各科目カードをクリックすると、以下の5つのタブで詳しく学習できます。<br>
-        <span class="sgb-tab">必要な技能</span>：この科目で身につける技能の一覧<br>
+        各業務分野カードをクリックすると、以下の5つのタブで詳しく学習できます。<br>
+        <span class="sgb-tab">必要な技能</span>：この業務分野で身につける技能の一覧<br>
         <span class="sgb-tab">チェックリスト</span>：自己確認用のチェック項目（クリックでチェック）<br>
         <span class="sgb-tab">キーワード</span>：重要語句の定義と公式テキスト参照ページ<br>
         <span class="sgb-tab">理解度質問</span>：記述式で答えられるか確認する問い<br>
@@ -788,7 +788,7 @@ body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text
     </div>
     <div class="grid-hdr">
       <button id="back-to-result-btn" onclick="updateFlowState()" style="display:none;font-size:13px;color:var(--accent);background:none;border:none;cursor:pointer;font-family:&#39;Noto Sans JP&#39;,sans-serif;text-decoration:underline;margin-bottom:8px;">← 結果に戻る</button>
-      <span class="grid-title" id="study-title">🔑 <span style="color:#185FA5">24時間ジム運営者</span>　2級（Intermediate）　科目一覧</span>
+      <span class="grid-title" id="study-title">🔑 <span style="color:#185FA5">24時間ジム運営者</span>　2級（Intermediate）　業務分野一覧</span>
       <button class="reset-btn" onclick="resetAll()">進捗をリセット</button>
     </div>
     <div class="dpanel" id="dpanel"></div>
@@ -806,7 +806,7 @@ body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text
 <script>
 const PERSONAS_DEF = [
   {id:'wa', label:'若手社員（入社1〜3年）', icon:'🌱', color:'#1D9E75',
-   note3:'総合型フィットネスクラブの現場スタッフ。全10科目がほぼ毎日の業務に直結する唯一のペルソナ。3級合格がキャリアの最初の節目。',
+   note3:'総合型フィットネスクラブの現場スタッフ。全10分野がほぼ毎日の業務に直結する唯一のペルソナ。3級合格がキャリアの最初の節目。',
    note2:'マーケ・収支・HRMが上位職の視点で登場。「現場から管理へ」の橋渡しとして機能する。'},
   {id:'li', label:'社員リーダー（主任・副支配人）', icon:'👔', color:'#3C3489',
    note3:'部下指導・チームビルド・部門収支管理が主な課題。3級は「部下に説明できること」が目標。',
@@ -826,7 +826,7 @@ const GUIDE3 = [
    secs:[
      {name:'P44〜P63　健康の定義・健康日本21・生活習慣病・高齢者の健康づくり', pages:'P44〜P63',
       badges:{wa:'sec',li:'pri'},
-      notes:{wa:'全10科目がほぼ毎日の業務に直結する。現状把握チェックで弱点を発見し、弱点から学習を始めましょう。',li:'クラブの地域貢献・健康政策との連携をチームに説明するための基盤知識。'}},
+      notes:{wa:'全10分野がほぼ毎日の業務に直結する。現状把握チェックで弱点を発見し、弱点から学習を始めましょう。',li:'クラブの地域貢献・健康政策との連携をチームに説明するための基盤知識。'}},
      {name:'P63〜P82　運動・栄養・休養の基礎知識・介護予防', pages:'P63〜P82',
       badges:{wa:'sec',li:'sec'},
       notes:{wa:'メッツ・五大栄養素・積極的休養はプログラム案内・健康相談の回答に使う基礎知識。',li:'部下スタッフの指導品質担保と会員への健康価値訴求の根拠として。'}}]},
@@ -835,7 +835,7 @@ const GUIDE3 = [
    secs:[
      {name:'P82〜P100　骨格筋・エネルギー代謝・加齢と不活動・トレーニングの原理原則', pages:'P82〜P100',
       badges:{wa:'sec',li:'sec'},
-      notes:{wa:'全10科目がほぼ毎日の業務に直結する。現状把握チェックで弱点を発見し、弱点から学習を始めましょう。',li:'部下スタッフへの指導内容の質担保・安全管理の根拠として。'}},
+      notes:{wa:'全10分野がほぼ毎日の業務に直結する。現状把握チェックで弱点を発見し、弱点から学習を始めましょう。',li:'部下スタッフへの指導内容の質担保・安全管理の根拠として。'}},
      {name:'P100〜P108　事故予防・一次救命処置・AED', pages:'P100〜P108',
       badges:{wa:'sec',li:'pri'},
       notes:{wa:'現場スタッフとして緊急時に動ける最低限の知識。年1回以上のAED・CPR訓練参加が必須。',li:'部門内のAED訓練・緊急対応マニュアルの整備はリーダーの責任。'}}]},
@@ -844,7 +844,7 @@ const GUIDE3 = [
    secs:[
      {name:'1節　フロント業務（P109〜P121）', pages:'P109〜P121',
       badges:{wa:'sec',li:'pri'},
-      notes:{wa:'全10科目がほぼ毎日の業務に直結する。現状把握チェックで弱点を発見し、弱点から学習を始めましょう。',li:'フロント部門の金銭管理・個人情報保護の正確な理解と部下への教育義務がある。'}},
+      notes:{wa:'全10分野がほぼ毎日の業務に直結する。現状把握チェックで弱点を発見し、弱点から学習を始めましょう。',li:'フロント部門の金銭管理・個人情報保護の正確な理解と部下への教育義務がある。'}},
      {name:'2節　ジム運営業務（P122〜P127）', pages:'P122〜P127',
       badges:{wa:'sec',li:'pri'},
       notes:{wa:'ジム部門担当者として毎日使う知識。マシンの種類・安全管理は現場業務の基本。',li:'マシンメンテナンス記録の標準化と部下への安全教育の根拠として。'}},
@@ -865,7 +865,7 @@ const GUIDE3 = [
    secs:[
      {name:'1節　顧客対応と接客の心構え（P165〜P174）', pages:'P165〜P174',
       badges:{wa:'sec',li:'pri'},
-      notes:{wa:'全10科目がほぼ毎日の業務に直結する。現状把握チェックで弱点を発見し、弱点から学習を始めましょう。',li:'LTVの考え方で部下に「1人の会員を継続させることの価値」を伝えられる。'}},
+      notes:{wa:'全10分野がほぼ毎日の業務に直結する。現状把握チェックで弱点を発見し、弱点から学習を始めましょう。',li:'LTVの考え方で部下に「1人の会員を継続させることの価値」を伝えられる。'}},
      {name:'2節　入会問い合わせ・見学者への対応（P175〜P176）', pages:'P175〜P176',
       badges:{wa:'sec',li:'pri'},
       notes:{wa:'見学者・体験者への案内は入社後すぐに担当する業務。見込み客のニーズを把握する技術は即戦力として必須。',li:'新規会員獲得率の管理と部下の接客スキル向上はリーダーの責任。'}},
@@ -877,7 +877,7 @@ const GUIDE3 = [
    secs:[
      {name:'1節　組織と業務分担の考え方（P187〜P188）', pages:'P187〜P188',
       badges:{wa:'sec',li:'pri'},
-      notes:{wa:'全10科目がほぼ毎日の業務に直結する。現状把握チェックで弱点を発見し、弱点から学習を始めましょう。',li:'この章がリーダーの最重要科目。リーダーシップ・フォロワーシップ・コーチング・ティーチングは部下育成の実践ツール。'}},
+      notes:{wa:'全10分野がほぼ毎日の業務に直結する。現状把握チェックで弱点を発見し、弱点から学習を始めましょう。',li:'この章がリーダーの最重要分野。リーダーシップ・フォロワーシップ・コーチング・ティーチングは部下育成の実践ツール。'}},
      {name:'2節　仕事の進め方（P189〜P193）　報連相・PDCAサイクル', pages:'P189〜P193',
       badges:{wa:'sec',li:'pri'},
       notes:{wa:'報連相・PDCAは入社1年目に最も習得すべきスキル。これが身につくと仕事の質が大きく変わる。',li:'PDCAは部門運営サイクルの基本。報連相の徹底は部門情報共有の基盤。'}},
@@ -892,7 +892,7 @@ const GUIDE3 = [
    secs:[
      {name:'1節　総合クラブの施設内容（P203〜P210）　施設・設備の種類・動線', pages:'P203〜P210',
       badges:{wa:'sec',li:'sec'},
-      notes:{wa:'全10科目がほぼ毎日の業務に直結する。現状把握チェックで弱点を発見し、弱点から学習を始めましょう。',li:'施設管理の最終責任者として、補修・修繕・更新の判断と予算管理はリーダーの業務。'}},
+      notes:{wa:'全10分野がほぼ毎日の業務に直結する。現状把握チェックで弱点を発見し、弱点から学習を始めましょう。',li:'施設管理の最終責任者として、補修・修繕・更新の判断と予算管理はリーダーの業務。'}},
      {name:'2節　管理の概念と基本（P211〜P217）　5S・補修・修繕・更新・再投資', pages:'P211〜P217',
       badges:{wa:'sec',li:'pri'},
       notes:{wa:'5Sによる清掃・整頓は若手スタッフの基本業務として直結。補修・修繕の報告フローを理解しておく。',li:'5S活動の定着は部門の品質管理の基盤。設備更新の判断・予算申請はリーダーの直接業務。'}}]},
@@ -901,7 +901,7 @@ const GUIDE3 = [
    secs:[
      {name:'1節　労働者の保護（P219〜P224）　労働基準法・社会保険・雇用形態', pages:'P219〜P224',
       badges:{wa:'sec',li:'pri'},
-      notes:{wa:'全10科目がほぼ毎日の業務に直結する。現状把握チェックで弱点を発見し、弱点から学習を始めましょう。',li:'部下の労務管理（シフト・残業・有給・ハラスメント対策）はリーダーの直接責任。'}},
+      notes:{wa:'全10分野がほぼ毎日の業務に直結する。現状把握チェックで弱点を発見し、弱点から学習を始めましょう。',li:'部下の労務管理（シフト・残業・有給・ハラスメント対策）はリーダーの直接責任。'}},
      {name:'2節　職場の安全衛生の基本（P225〜P231）　ハインリッヒの法則・KYT・薬品管理', pages:'P225〜P231',
       badges:{wa:'sec',li:'sec'},
       notes:{wa:'現場でのヒヤリハット報告・安全確認は若手スタッフの重要な役割。ハインリッヒの法則は報告の大切さを理解するための根拠知識。',li:'部下のメンタルヘルス管理・ラインケアはリーダーの直接責任。ヒヤリハット収集体制の構築もリーダーの役割。'}}]}
@@ -1432,7 +1432,7 @@ function startWithGrade(grade){
   const ptitle=PERSONAS_DEF.find(x=>x.id===selectedPersona);
   document.getElementById('study-title').innerHTML=
     (ptitle?ptitle.icon+' <span style="color:'+ptitle.color+'">'+ptitle.label+'</span>　':'')+
-    (grade===3?'3級（Basic）':'2級（Intermediate）')+'　科目一覧';
+    (grade===3?'3級（Basic）':'2級（Intermediate）')+'　業務分野一覧';
 
   document.getElementById('persona-select-area').style.display='none';
   document.querySelector('.layout').style.display = '';
@@ -1478,8 +1478,8 @@ function startWithGrade(grade){
   document.getElementById('check-start-title').textContent=(p?p.icon+' ':'')+' まず現状を把握しましょう';
   document.getElementById('check-start-desc').innerHTML=
     '<strong>'+(p?p.label:'')+'</strong>　'+(grade===3?'3級（Basic）':'2級（Intermediate）')+'<br>'+
-    '全'+subs.length+'科目・'+totalQ+'問に「できる・だいたいできる・あやふや・できない」で答えるだけ。<br>'+
-    '得意科目と苦手科目が一目でわかります。'+
+    '全'+subs.length+'業務分野・'+totalQ+'問に「できる・だいたいできる・あやふや・できない」で答えるだけ。<br>'+
+    '得意分野と苦手分野が一目でわかります。'+
     (grade===2?'<br><span style="color:var(--accent3);font-size:11px;">⚠️ ② 運動トレーニングはBasicテキスト参照（3級タブで確認）</span>':'');
   if(Object.keys(checkResults).length>0){
     document.getElementById('result-view').style.display='';
@@ -1720,7 +1720,7 @@ function nextQ(){
 }
 
 function finishCheck(){
-  // 科目別に集計してステータスを更新
+  // 分野別に集計してステータスを更新
   const newStatus={};
   getCurrentSubjects().forEach(s=>{
     const ans=sessionAnswers[s.id]||{};
@@ -1788,7 +1788,7 @@ function renderResults(){
       <div class="result-bar"><div class="result-fill" style="width:${pct}%;background:${fillColor}"></div></div>
       <div class="result-detail">${qBadges}</div>
       <div class="result-action">
-        <button class="ract-btn primary" onclick="switchView('study');setTimeout(()=>toggleDetail('${s.id}'),100)">この科目を学習する</button>
+        <button class="ract-btn primary" onclick="switchView('study');setTimeout(()=>toggleDetail('${s.id}'),100)">この業務分野を学習する</button>
       </div>
     </div>`;
   }).join('');
@@ -1810,6 +1810,8 @@ function renderGrid(){
   const qcToSubj3 = {}; Object.entries(subjToQc3).forEach(([k,v])=>qcToSubj3[v]=k);
   const qcMap = selectedGrade===2 ? QC2_TO_GMKEY : QC3_TO_GMKEY;
   const chapRef3 = {s01:'Basic 第2章',s02:'Basic 第3章',s03:'Basic 第1章',s04:'Basic 第4章',s05:'Basic 第4章',s06:'Basic 第7章',s07:'Basic 第5章',s08:'Basic 第5章',s09:'Basic 第6章',s10:'Basic 第8章'};
+      const secRef3 = {s01:'Basic 第2章 全体（健康の定義・運動・栄養・休養）',s02:'Basic 第3章（骨格筋・代謝・トレーニングの原理原則）',s03:'Basic 第1章 全体',s04:'Basic 第4章 1〜5節（フロント・ジム・スタジオ・プール・スクール）',s05:'Basic 第4章 6節　イベントの企画・運営・財務',s06:'Basic 第7章 1〜2節（施設内容・管理・5S）',s07:'Basic 第5章 2〜3節（入会・見学者対応／課題解決）',s08:'Basic 第5章 1節　接客の心構え',s09:'Basic 第6章 1〜4節',s10:'Basic 第8章 1〜2節（労働者の保護・職場の安全衛生）'};
+      
   const chapRef2 = {s01:'Basic（3級参照）',s02:'Basic（3級参照）',s03:'Int. 第1章',s04a:'Int. 第3章',s04b:'Int. 第4章',s04c:'Int. 第5章',s04d:'Int. 第8章',s04e:'Int. 第6章',s04f:'Int. 第9章',s05:'Int. 第7章',s06:'Int. 第9章',s07:'Int. 第6章'};
   const chapRef = selectedGrade===2 ? chapRef2 : chapRef3;
   const priMap = {pri:0, strat:1, teach:2, exam:3};
@@ -1863,14 +1865,14 @@ function renderGrid(){
     const group = priGroups[pri];
     if(group.length === 0) return;
     const doneCount = group.filter(s => status[s.id]==='good'||status[s.id]==='ok').length;
-    const progressText = doneCount > 0 ? `　✅ ${doneCount}/${group.length}章 確認済み` : '';
-    cardsHtml += `<div style="grid-column:1/-1;font-size:13px;font-weight:700;color:${priColor[pri]};padding:12px 0 6px 0;border-bottom:1px solid var(--border);margin-bottom:4px;">${priLabel[pri]}（${group.length}章）<span style="font-size:11px;font-weight:400;color:var(--text-dim);">${progressText}</span></div>`;
+    const progressText = doneCount > 0 ? `　✅ ${doneCount}/${group.length}分野 確認済み` : '';
+    cardsHtml += `<div style="grid-column:1/-1;font-size:13px;font-weight:700;color:${priColor[pri]};padding:12px 0 6px 0;border-bottom:1px solid var(--border);margin-bottom:4px;">${priLabel[pri]}（${group.length}分野）<span style="font-size:11px;font-weight:400;color:var(--text-dim);">${progressText}</span></div>`;
     group.forEach(s => {
       const st=status[s.id]||'none';
       const cl=checks[s.id]||[];
       const done=cl.filter(Boolean).length;
       const badge = chPri[s.id] ? priBadge[chPri[s.id]] : null;
-      const chap = chapRef[s.id]||'';
+      const chap = (selectedGrade!==2 && typeof secRef3!=='undefined' && secRef3[s.id]) ? secRef3[s.id] : (chapRef[s.id]||'');
       const qcA=quickAnswers[getQcId(s.id)];
       const qcBadge = qcA ? `<span style="font-size:10px;padding:2px 8px;border-radius:4px;background:${qcA==='no'?'#FEE2E2':qcA==='vague'?'#FEF3C7':'#D1FAE5'};color:${qcColor[qcA]||'#6B7280'};font-weight:600;">${qcLabel[qcA]||''}</span>` : '';
       cardsHtml += `<div class="scard" data-id="${s.id}" data-status="${st}" data-qc="${qcA||"none"}" onclick="toggleDetail('${s.id}')">
@@ -1897,7 +1899,7 @@ function renderSidebar(){
   const weak=getCurrentSubjects().filter(s=>(status[s.id]||'none')==='weak');
   const none=getCurrentSubjects().filter(s=>(status[s.id]||'none')==='none');
   const items=[...weak,...none].slice(0,5);
-  if(items.length===0){tl.innerHTML='<div class="tnone" style="color:var(--accent2)">◎ 全科目を学習中！</div>';return;}
+  if(items.length===0){tl.innerHTML='<div class="tnone" style="color:var(--accent2)">◎ 全業務分野を学習中！</div>';return;}
   tl.innerHTML=items.map(s=>{
     const st=status[s.id]||'none';
     const badge=st==='weak'?`<span class="tbadge" style="background:var(--s-weak);color:var(--c-weak);">△</span>`:`<span class="tbadge" style="background:var(--s-none);color:var(--c-none);">✗</span>`;
@@ -1942,7 +1944,7 @@ function renderDetail(){
   </div>`;
 
   const kwHtml=`<div class="tab-pane ${activeTab==='keywords'?'active':''}">
-    ${kwCount===0?'<div style="padding:20px;text-align:center;color:var(--text-dim);font-size:14px;">この科目にはキーワードが登録されていません。</div>':`<div style="font-size:11px;color:var(--text-dim);margin-bottom:10px;padding:5px 9px;background:rgba(75,123,245,.07);border-radius:6px;border-left:2px solid var(--accent);">💡 <strong style="color:var(--accent)">ⓘ</strong>マーク付きをクリック → 定義と出典ページを表示</div>
+    ${kwCount===0?'<div style="padding:20px;text-align:center;color:var(--text-dim);font-size:14px;">この業務分野にはキーワードが登録されていません。</div>':`<div style="font-size:11px;color:var(--text-dim);margin-bottom:10px;padding:5px 9px;background:rgba(75,123,245,.07);border-radius:6px;border-left:2px solid var(--accent);">💡 <strong style="color:var(--accent)">ⓘ</strong>マーク付きをクリック → 出典ページを表示</div>
     ${s.keywords.map(g=>{
       const shown=g.terms.filter(t=>getKWDB()[t]);
       if(shown.length===0) return '';
@@ -2271,7 +2273,7 @@ function renderGuideMap(){
         <span class="gm-ch-pages">Basic P82〜P108</span>
         <span class="gm-ch-arr">▶</span>
       </div>
-      <div class="gm-scene" style="background:#854F0Bdd">2級テキストにこの科目の独立した章は存在しない。2級試験でも出題されるためBasicテキストで必ず確認する。</div>`;
+      <div class="gm-scene" style="background:#854F0Bdd">2級テキストにこの業務分野の独立した章は存在しない。2級試験でも出題されるためBasicテキストで必ず確認する。</div>`;
     wrap.appendChild(basicRef);
   }
 
@@ -2294,7 +2296,7 @@ function renderGuideMap(){
   const topGuide=document.createElement('div');
   topGuide.className='gm-guide-intro';
   topGuide.innerHTML=`
-    <div class="gm-intro-text">📍 あなたの仕事に直結する科目です。まず全体像を確認しましょう。</div>
+    <div class="gm-intro-text">📍 あなたの仕事に直結する業務分野です。まず全体像を確認しましょう。</div>
     <button class="gm-check-btn" onclick="goToQuickCheck()">📝 簡易チェックで現状を把握する →</button>`;
   wrap.appendChild(topGuide);
 
@@ -2311,7 +2313,7 @@ function renderGuideMap(){
       <div class="gm-ch-hdr${isOpen?' open':''}" style="background:${hdrColor}" onclick="toggleChapter(this)">
         <span class="gm-ch-icon">${bd.label.charAt(0)}</span>
         <span class="gm-ch-title" style="font-weight:700">${bd.group}</span>
-        <span class="gm-ch-count">${list.length}科目</span>
+        <span class="gm-ch-count">${list.length}分野</span>
         <span class="gm-ch-arr">▶</span>
       </div>
       <div class="gm-secs${isOpen?' open':''}">
@@ -2676,7 +2678,7 @@ function renderQuickResult(){
 
   if(allOk){
     msg.innerHTML = '<div class="qr-ok-box">'+
-      '<strong>全科目「できる」と回答しました。</strong><br>'+
+      '<strong>全業務分野「できる」と回答しました。</strong><br>'+
       '現在の知識レベルであれば、FCM技能検定'+(selectedGrade===2?'2級':'3級')+'の受検タイミングです。<br>'+
       '各章のチェックリストで確認してから受検申込へ進むことをおすすめします。</div>';
   } else {
@@ -2686,11 +2688,11 @@ function renderQuickResult(){
     const okCount = totalQ - weakCount - vagueCount;
     msg.innerHTML = '<div style="font-size:13px;color:var(--text-sub);line-height:1.7;'+
       'padding:12px 14px;background:var(--surface);border-radius:9px;margin-bottom:10px;">'+
-      '全'+totalQ+'科目中、<strong style="color:#DC2626">✗ 苦手 '+weakCount+'科目</strong>'+
-      (vagueCount>0?' ・ <strong style="color:#D97706">△ あやふや '+vagueCount+'科目</strong>':'')+
-      (okCount>0?' ・ <strong style="color:#059669">◎ できる '+okCount+'科目</strong>':'')+
+      '全'+totalQ+'分野中、<strong style="color:#DC2626">✗ 苦手 '+weakCount+'分野</strong>'+
+      (vagueCount>0?' ・ <strong style="color:#D97706">△ あやふや '+vagueCount+'分野</strong>':'')+
+      (okCount>0?' ・ <strong style="color:#059669">◎ できる '+okCount+'分野</strong>':'')+
       '<br>下のボタンから、苦手な章の一覧に進みます。学習したい章を選んでください。'+
-      '<br><span style="font-size:11px;color:var(--text-dim);">※1つの章に複数の科目が含まれるため、章の数と科目の数は異なります。</span></div>';
+      '<br><span style="font-size:11px;color:var(--text-dim);">※1つの章に複数の業務分野が含まれるため、章の数と業務分野の数は異なります。</span></div>';
   }
 
   const quickStatus = {};
@@ -2749,7 +2751,7 @@ function getPastExamData(sid){
 
 function renderPastExamTab(sid){
   const d = getPastExamData(sid);
-  if(!d) return '<div class="pe-empty">この科目の過去問データはありません。</div>';
+  if(!d) return '<div class="pe-empty">この業務分野の過去問データはありません。</div>';
 
   const kaiLabel = {'12':'第12回（令和4年度）','14':'第14回（令和5年度）','16':'第16回（令和6年度）'};
   const kaiClass = {'12':'pe-k12','14':'pe-k14','16':'pe-k16'};
@@ -2786,7 +2788,7 @@ function renderPastExamTab(sid){
   }
 
   if(!hasGakka && !hasJitsu){
-    html += '<div class="pe-empty">この科目からの出題データはありません。</div>';
+    html += '<div class="pe-empty">この業務分野からの出題データはありません。</div>';
   }
 
   html += '<div class="pe-cta">';
