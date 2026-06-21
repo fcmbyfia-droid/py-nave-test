@@ -640,7 +640,7 @@ body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text
     <div id="view-tabs-area" style="">
       <div class="view-tabs-wrap">
         <!-- v2: tabs removed -->
-        <div id="flow-guide"><div class="flow-guide-note"><strong>📝 使い方（2ステップ）</strong><br>STEP 1：まず簡易チェックで苦手な章を見つける（約2分）<br>STEP 2：苦手な章からテキストを開いて学ぶ</div></div></div>
+        <div id="flow-guide"><div class="flow-guide-note"><strong>📝 使い方（2ステップ）</strong><br>STEP 1：まず簡易チェックで苦手な業務分野を見つける（約2分）<br>STEP 2：苦手な業務分野からテキストを開いて学ぶ</div></div></div>
         <div style="margin-top:10px;" id="guide-toggle-wrap">
           <div class="guide-toggle-box">
             <div class="guide-toggle-desc">📍 あなたの仕事に直結する業務分野が一目でわかります。まずはこちらで全体像を確認しましょう。</div>
@@ -720,7 +720,7 @@ body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text
             </div>
             <!-- 登録済みの場合のボタン -->
             <div id="already-registered" style="display:none;">
-              <button class="flow-btn-primary" onclick="showStudyFromResult()">苦手な章から学習を始める →</button>
+              <button class="flow-btn-primary" onclick="showStudyFromResult()">苦手な業務分野から学習を始める →</button>
               <div style="text-align:center;margin-top:12px;">
                 <button class="flow-btn-secondary" onclick="startQuickCheck()">もう一度チェック</button>
               </div>
@@ -1519,7 +1519,7 @@ function setFlowState(state){
     if(vs){vs.style.display='';renderStudy();}
     if(br)br.style.display='';
     if(pgb)pgb.style.display='';
-    // 苦手な章（✗苦手・△あやふや）だけ表示、それ以外は非表示
+    // 苦手な業務分野（✗苦手・△あやふや）だけ表示、それ以外は非表示
     document.querySelectorAll('#sgrid .scard').forEach(function(el){
       var qc=el.getAttribute('data-qc');
       if(qc==='no'||qc==='vague'){
@@ -1798,7 +1798,7 @@ function renderGrid(){
     :gmSorted;
   const hasQR=Object.keys(quickAnswers).length>0;
   const descHtml=hasQR
-    ?`<div style="grid-column:1/-1;font-size:13px;color:var(--text-sub);line-height:1.7;margin-bottom:8px;padding:12px 14px;background:var(--surface);border:1px solid var(--border);border-radius:8px;">簡易チェックで「苦手」と「あやふや」だった章を表示しています。<br>学習したい章をタップしてください。<div style="margin-top:10px;"><button id="show-all-chapters-btn-top" onclick="showAllChapters()" style="font-size:13px;color:var(--accent);background:none;border:1px solid var(--accent);border-radius:8px;padding:8px 20px;cursor:pointer;">得意な章も含めてすべて見る ▼</button></div></div>`
+    ?`<div style="grid-column:1/-1;font-size:13px;color:var(--text-sub);line-height:1.7;margin-bottom:8px;padding:12px 14px;background:var(--surface);border:1px solid var(--border);border-radius:8px;">簡易チェックで「苦手」と「あやふや」だった業務分野を表示しています。<br>学習したい業務分野をタップしてください。<div style="margin-top:10px;"><button id="show-all-chapters-btn-top" onclick="showAllChapters()" style="font-size:13px;color:var(--accent);background:none;border:1px solid var(--accent);border-radius:8px;padding:8px 20px;cursor:pointer;">得意な業務分野も含めてすべて見る ▼</button></div></div>`
     :`<div style="grid-column:1/-1;font-size:13px;color:var(--text-sub);line-height:1.7;margin-bottom:8px;padding:12px 14px;background:var(--surface);border:1px solid var(--border);border-radius:8px;">あなたの業務に直結する章から並べています。<br><span style="color:#065F46">◎業務直結</span> → <span style="color:#1E40AF">○戦略</span> → <span style="color:#4B5563">△指導系</span> → <span style="color:#991B1B">▽受検用</span> の順です。</div>`;
   // v2: 優先度グループ別に全章表示
   const priGroups = {pri:[], strat:[], teach:[], exam:[]};
@@ -2628,7 +2628,7 @@ function renderQuickResult(){
     msg.innerHTML = '<div class="qr-ok-box">'+
       '<strong>全業務分野「できる」と回答しました。</strong><br>'+
       '現在の知識レベルであれば、FCM技能検定'+(selectedGrade===2?'2級':'3級')+'の受検タイミングです。<br>'+
-      '各章のチェックリストで確認してから受検申込へ進むことをおすすめします。</div>';
+      '最終確認として各業務分野のチェックリストを見直し、公式テキストで知識を固めてから受検申込へ進みましょう。</div>';
   } else {
     const totalQ = qs.length;
     const weakCount = weak.length;
@@ -2639,7 +2639,7 @@ function renderQuickResult(){
       '全'+totalQ+'分野中、<strong style="color:#DC2626">✗ 苦手 '+weakCount+'分野</strong>'+
       (vagueCount>0?' ・ <strong style="color:#D97706">△ あやふや '+vagueCount+'分野</strong>':'')+
       (okCount>0?' ・ <strong style="color:#059669">◎ できる '+okCount+'分野</strong>':'')+
-      '<br>下のボタンから、苦手な章の一覧に進みます。学習したい章を選んでください。'+
+      '<br>下のボタンから、苦手な業務分野の一覧に進みます。学習したい業務分野を選んでください。'+
       '<br><span style="font-size:11px;color:var(--text-dim);">※1つの章に複数の業務分野が含まれるため、章の数と業務分野の数は異なります。</span></div>';
   }
 
