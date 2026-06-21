@@ -1762,7 +1762,8 @@ function renderGrid(){
   const chapRef3 = {s01:'Basic 第2章',s02:'Basic 第3章',s03:'Basic 第1章',s04:'Basic 第4章',s05:'Basic 第4章',s06:'Basic 第7章',s07:'Basic 第5章',s08:'Basic 第5章',s09:'Basic 第6章',s10:'Basic 第8章'};
       const secRef3 = {s01:'Basic 第2章 全体（健康の定義・運動・栄養・休養）',s02:'Basic 第3章（骨格筋・代謝・トレーニングの原理原則）',s03:'Basic 第1章 全体',s04:'Basic 第4章 1〜5節（フロント・ジム・スタジオ・プール・スクール）',s05:'Basic 第4章 6節　イベントの企画・運営・財務',s06:'Basic 第7章 1〜2節（施設内容・管理・5S）',s07:'Basic 第5章 2〜3節（入会・見学者対応／課題解決）',s08:'Basic 第5章 1節　接客の心構え',s09:'Basic 第6章 1〜4節',s10:'Basic 第8章 1〜2節（労働者の保護・職場の安全衛生）'};
       
-  const chapRef2 = {s01:'Basic（3級参照）',s02:'Basic（3級参照）',s03:'Int. 第1章',s04a:'Int. 第3章',s04b:'Int. 第4章',s04c:'Int. 第5章',s04d:'Int. 第8章',s04e:'Int. 第6章',s04f:'Int. 第9章',s05:'Int. 第7章',s06:'Int. 第9章',s07:'Int. 第6章'};
+  const secRef2 = {s01:'Basic 第2章＋Int 第2章（健康施策・THP・健康経営・デジタルヘルス）',s02:'Basic 第3章 参照（3級・Int独立章なし）',s03:'Int 第1章 4節　介護予防（一般介護予防事業）',s04a:'Int 第3章 運営業務全般（フロント/ジム/スタジオ/プール/スクール/付帯）＋第5章2節 商品・サービス管理',s04b:'Int 第4章 全体（マーケ・商圏・プロモ・Web）',s04c:'Int 第5章 1・3節（販売管理・収支管理）',s04d:'Int 第8章 2・4節（設備点検・事故防止/緊急時対応）',s04e:'Int 第6章 1〜6節（HRM・人材育成・コーチング・要員・労働法規一般）',s04f:'Int 第9章 2節　リスク管理',s05:'Int 第7章 全体（顧客管理・会員継続・コミュニティ）',s06:'Int 第9章 1節　主な法律',s07:'Int 第6章 7節　職場の安全衛生'};
+      const chapRef2 = {s01:'Basic（3級参照）',s02:'Basic（3級参照）',s03:'Int. 第1章',s04a:'Int. 第3章',s04b:'Int. 第4章',s04c:'Int. 第5章',s04d:'Int. 第8章',s04e:'Int. 第6章',s04f:'Int. 第9章',s05:'Int. 第7章',s06:'Int. 第9章',s07:'Int. 第6章'};
   const chapRef = selectedGrade===2 ? chapRef2 : chapRef3;
   const priMap = {pri:0, strat:1, teach:2, exam:3};
   const priBadge = {
@@ -1822,7 +1823,7 @@ function renderGrid(){
       const cl=checks[s.id]||[];
       const done=cl.filter(Boolean).length;
       const badge = chPri[s.id] ? priBadge[chPri[s.id]] : null;
-      const chap = (selectedGrade!==2 && typeof secRef3!=='undefined' && secRef3[s.id]) ? secRef3[s.id] : (chapRef[s.id]||'');
+      const chap = (selectedGrade===2) ? ((typeof secRef2!=='undefined' && secRef2[s.id]) ? secRef2[s.id] : (chapRef[s.id]||'')) : ((typeof secRef3!=='undefined' && secRef3[s.id]) ? secRef3[s.id] : (chapRef[s.id]||''));
       const qcA=quickAnswers[getQcId(s.id)];
       const qcBadge = qcA ? `<span style="font-size:10px;padding:2px 8px;border-radius:4px;background:${qcA==='no'?'#FEE2E2':qcA==='vague'?'#FEF3C7':'#D1FAE5'};color:${qcColor[qcA]||'#6B7280'};font-weight:600;">${qcLabel[qcA]||''}</span>` : '';
       cardsHtml += `<div class="scard" data-id="${s.id}" data-status="${st}" data-qc="${qcA||"none"}" onclick="toggleDetail('${s.id}')">
